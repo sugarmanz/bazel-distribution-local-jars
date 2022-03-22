@@ -11,21 +11,21 @@ kt_jvm_library(
 )
 
 kt_jvm_junit5_test(
-    name = "lib-b-test",
+    name = "test",
     srcs = ["LibBTest.kt"],
     associates = [":lib-b"],
     test_package = "com.sugarmanz.bazel.distribution",
 )
 
 assemble_maven(
-    name = "lib-b-assemble",
+    name = "assemble",
     target = ":lib-b",
     version_file = "//:VERSION",
     workspace_refs = "@plugin_workspace_refs//:refs.json",
 )
 
 deploy_maven(
-    name = "lib-b-deploy",
+    name = "deploy",
     target = ":lib-b-assemble",
     release = "https://release.com",
     snapshot = "https://snapshot.com",
