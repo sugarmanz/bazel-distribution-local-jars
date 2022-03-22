@@ -22,4 +22,6 @@ Error: index out of range (index is 0, but sequence has 0 elements)
 
 i.e. `//lib-b:assemble` would try to bundle the `//vendor` even though it _should_ already be included in `lib-a`.
 
+![lib-b.jar](./media/lib-b-jar.png)
+
 I still need to figure this part out.

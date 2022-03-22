@@ -28,7 +28,7 @@ junit_platform_java_repositories(version = "1.7.2")
 
 git_repository(
     name = "vaticle_bazel_distribution",
-    remote = "https://github.com/vaticle/bazel-distribution",
+    remote = "https://github.com/sugarmanz/bazel-distribution",
     branch = "master",
 )
 

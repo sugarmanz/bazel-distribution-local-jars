@@ -26,7 +26,7 @@ assemble_maven(
 
 deploy_maven(
     name = "deploy",
-    target = ":lib-b-assemble",
+    target = ":assemble",
     release = "https://release.com",
     snapshot = "https://snapshot.com",
 )
