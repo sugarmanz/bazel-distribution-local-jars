@@ -25,7 +25,8 @@ i.e. `//lib-b:assemble` would try to bundle the `//vendor` even though it _shoul
 ![lib-b.jar](./media/lib-b-jar.png)
 
 I solved this by filtering out JAR transitive dependencies from dependencies that have Maven coordinates because that JAR would have already been bundled into a published dependency.
-https://github.com/sugarmanz/bazel-distribution/blob/412162f901f6650e67e014156945ee06c6619b1b/maven/rules.bzl#L224-L229
+
+https://github.com/sugarmanz/bazel-distribution/blob/412162f901f6650e67e014156945ee06c6619b1b/maven/rules.bzl#L223-L229
 
 ### Desired Output
 
