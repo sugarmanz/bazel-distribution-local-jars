@@ -24,4 +24,17 @@ i.e. `//lib-b:assemble` would try to bundle the `//vendor` even though it _shoul
 
 ![lib-b.jar](./media/lib-b-jar.png)
 
-I still need to figure this part out.
+I solved this by filtering out JAR transitive dependencies from dependencies that have Maven coordinates because that JAR would have already been bundled into a published dependency.
+https://github.com/sugarmanz/bazel-distribution/blob/412162f901f6650e67e014156945ee06c6619b1b/maven/rules.bzl#L224-L229
+
+### Desired Output
+
+- `lib-a.jar` should include `lib-a` classes and `vendor` classes
+
+![desired-lib-a.jar](./media/desired-lib-a-jar.png)
+
+- `lib-b.jar` should include `lib-b` classes and a dependency on `lib-a`
+
+![desired-lib-b.jar](./media/desired-lib-b-jar.png)
+
+![desired-lib-b.pom](./media/desired-lib-b-pom.png)
